@@ -16,9 +16,8 @@ jobs:
       - name: 'Build:dockerimage'
         uses: docker/build-push-action@v2
         with:
-
           registry: ${{ env.REGISTRY }}
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
-          repository: ravillatypov12/hashtag_mentions
+          repository:  ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
           tags: latest
