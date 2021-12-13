@@ -114,7 +114,7 @@ async def get_subscriptions(callback_query: CallbackQuery):
     content_types=ContentType.TEXT
 )
 async def handle_hashtags(message: Message):
-    if message.from_user.is_bot:
+    if message.from_user.id == dp.bot.id:
         return
 
     hastags = parse_hashtags(message)
